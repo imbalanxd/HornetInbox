@@ -1,5 +1,5 @@
 # HornetInbox
-Hi! Thanks for taking interest in Hornet!
+Hi! Thanks for taking an interest in Hornet!
 Here are the requirements for this coding interview:
 
 We want to create an app that simulates a chat inbox.
@@ -20,6 +20,7 @@ To do this, a raw resource file has been created that acts as a data source for 
 ### Bonus requirements
 - Insure that no two users have identical profile pictures, even when the name of two Users is very similar. (Bonus++: Don't use a library to do this)
 - Update the inbox list smoothly when it is reordering
+- Provide a way for the user to refresh the inbox
 
 The basic code needed is provided, but it might not all work 100% 😉. Make any changes required to make the code work correctly. Use any libraries you would like to.
 Make a pull request once you are happy with your work.
