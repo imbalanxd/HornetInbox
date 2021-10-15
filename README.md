@@ -8,9 +8,9 @@ To do this, a raw resource file has been created that acts as a data source for 
 ## Requirements
 ### Create an app that retrieves inbox information in the form of individual conversations, and displays it in an inbox list. 
 - Each conversation in the list should be displayed with a profile picture, the user's name, and the last time a message was received.
-- The profile picture should consist of an upper case letter than the user's name begins with.
+- The profile picture should consist of an upper case letter that the user's name begins with.
 - The last time a message was received should be in the format of how long ago it happened. Some examples: _10 seconds ago_, _30 minutes ago_, _1 hour ago_, _37 days ago_. You may round these units however you would like to. The list should be ordered from newest to oldest conversation.
-- These conversations should be divided into two lists: The first list should contain the 20 most recent conversations, and the second should contain all remaining conversations. These lists should be seperated by a pager that the user can swipe left and right on.
+- These conversations should be divided into two lists: The first list should contain the 20 most recent conversations, and the second should contain all remaining conversations. These lists should be seperated by a pager that the user can swipe left and right between.
 - The conversation data is paginated, and should be loaded appropriately. A new page should only be requested when the user tries to scroll the list, or when viewing an empty list.
 
 ### Simulate the process of receiving a new message and updating the inbox list appopriately
@@ -18,8 +18,8 @@ To do this, a raw resource file has been created that acts as a data source for 
 - Both the inbox lists should be updated appropriately when this happens.
 
 ### Bonus requirements
-- Insure that each User will always have a unique profile picture, even when the name of two Users is very similar. (Bonus++: Don't use a library to do this)
+- Insure that no two users have identical profile pictures, even when the name of two Users is very similar. (Bonus++: Don't use a library to do this)
 - Update the inbox list smoothly when it is reordering
 
-The basic code needed is provided, but it might not all work 100% 😉.
+The basic code needed is provided, but it might not all work 100% 😉. Make any changes required to make the code work correctly. Use any libraries you would like to.
 Make a pull request once you are happy with your work.
