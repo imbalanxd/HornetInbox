@@ -18,7 +18,7 @@ To do this, a raw resource file has been created that acts as a data source for 
 - Both the inbox lists should be updated appropriately when this happens.
 
 ### Bonus requirements
-- Insure that each User will always have a unique profile picture, even when the name of two Users starts with the same letter
+- Insure that each User will always have a unique profile picture, even when the name of two Users is very similar. (Bonus++: Don't use a library to do this)
 - Update the inbox list smoothly when it is reordering
 
 The basic code needed is provided, but it might not all work 100% 😉.
