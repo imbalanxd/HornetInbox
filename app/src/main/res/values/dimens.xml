@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="match_constraints">0dp</dimen>
+    <dimen name="profile_image_initials_size">30sp</dimen>
+    <dimen name="default_view_margin">8dp</dimen>
+    <dimen name="small_text_size">12sp</dimen>
+    <dimen name="medium_text_size">18sp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="heading_text_size">22sp</dimen>
+    <dimen name="refresh_button_margin">12dp</dimen>
+</resources>

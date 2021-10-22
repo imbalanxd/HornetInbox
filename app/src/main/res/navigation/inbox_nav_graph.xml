@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/inbox_nav_graph"
+    app:startDestination="@id/inboxFragment">
+
+    <fragment
+        android:id="@+id/inboxRecentFragment"
+        android:name="com.hornet.hornetinbox.view.InboxRecentFragment"
+        android:label="InboxRecentFragment"
+        tools:layout="@layout/fragment_recent_inbox" />
+
+    <fragment
+        android:id="@+id/inboxFragment"
+        android:name="com.hornet.hornetinbox.view.InboxFragment"
+        android:label="InboxFragment"
+        tools:layout="@layout/fragment_inbox" />
+
+</navigation>
