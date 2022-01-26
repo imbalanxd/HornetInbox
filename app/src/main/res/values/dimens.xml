@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--    TEXT_SIZE-->
+    <dimen name="ts_small_xxx">15sp</dimen>
+    <dimen name="ts_small_xx">14sp</dimen>
+    <dimen name="ts_small_x">13sp</dimen>
+    <dimen name="ts_small">12sp</dimen>
+
+    <dimen name="ts_medium_xxx">19sp</dimen>
+    <dimen name="ts_medium_xx">18sp</dimen>
+    <dimen name="ts_medium_x">17sp</dimen>
+    <dimen name="ts_medium">16sp</dimen>
+
+    <!--    IMAGE VIEW-->
+    <dimen name="profile_image">30sp</dimen>
+
+    <!--    MARGINS-->
+    <dimen name="margins">8dp</dimen>
+    <dimen name="margin_top">8dp</dimen>
+    <dimen name="margin_top_x">9dp</dimen>
+    <dimen name="margin_top_xx">10dp</dimen>
+    <dimen name="margin_top_xxx">11dp</dimen>
+    <dimen name="margin_bottom">8dp</dimen>
+    <dimen name="margin_left">8dp</dimen>
+    <dimen name="margin_right">8dp</dimen>
+
+    <!--    CONSTRAINTS-->
+    <dimen name="match_parent">0dp</dimen>
+    <dimen name="profile_Image">50dp</dimen>
+</resources>
