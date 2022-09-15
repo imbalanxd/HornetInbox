@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <View
+        android:id="@+id/ivProfile"
+        android:layout_width="@dimen/profile_Image"
+        android:layout_height="@dimen/profile_Image"
+        android:layout_margin="@dimen/margins"
+        android:contentDescription="@string/profile_image_view"
+        android:background="#FF018786"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvInitials"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textSize="@dimen/profile_image"
+        app:layout_constraintBottom_toBottomOf="@id/ivProfile"
+        app:layout_constraintEnd_toEndOf="@id/ivProfile"
+        app:layout_constraintStart_toStartOf="@id/ivProfile"
+        app:layout_constraintTop_toTopOf="@id/ivProfile"
+        tools:text="@string/test_credentials_holder" />
+
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="@dimen/match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_top"
+        android:layout_marginTop="@dimen/margin_top"
+        android:textSize="@dimen/ts_medium_xxx"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/ivProfile"
+        app:layout_constraintTop_toTopOf="@id/ivProfile"
+        tools:text="@string/test_name_holder" />
+
+    <TextView
+        android:id="@+id/tv_relative_time"
+        android:layout_width="@dimen/match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_top"
+        android:layout_marginTop="6dp"
+        android:layout_marginBottom="@dimen/margin_top"
+        android:textSize="@dimen/ts_small_xxx"
+        app:layout_constraintStart_toEndOf="@id/ivProfile"
+        app:layout_constraintTop_toBottomOf="@id/tvName"
+        tools:text="@string/test_time_holder" />
+
+    <View
+        android:layout_width="@dimen/match_parent"
+        android:layout_height=".5dp"
+        android:layout_marginTop="@dimen/margin_top_xxx"
+        android:background="@color/teal_700"
+        app:flow_verticalBias="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/ivProfile"
+        app:layout_constraintTop_toBottomOf="@id/ivProfile" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
