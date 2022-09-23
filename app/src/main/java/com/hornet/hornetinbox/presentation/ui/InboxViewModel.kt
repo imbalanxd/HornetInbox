@@ -1,9 +1,9 @@
 package com.hornet.hornetinbox.presentation.ui
 
+import androidx.annotation.VisibleForTesting
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.hornet.hornetinbox.CoroutineDispatcherProvider
 import com.hornet.hornetinbox.data.InboxResult
 import com.hornet.hornetinbox.data.models.Inbox
 import com.hornet.hornetinbox.domain.usecases.GetInboxUseCase
@@ -15,14 +15,16 @@ import javax.inject.Inject
 
 @HiltViewModel
 class InboxViewModel @Inject constructor(
-    private val coroutineDispatcherProvider: CoroutineDispatcherProvider,
     private val getInboxUseCase: GetInboxUseCase,
     private val updateInboxContentUseCase: UpdateInboxContentUseCase,
     private val updateRandomInboxTimeUseCase: UpdateRandomInboxTimeUseCase
 ) : ViewModel() {
 
-    private var nextPageToLoad = 0
+    @VisibleForTesting
+    var nextPageToLoad = 0
+        private set
 
+    @VisibleForTesting
     var currentInboxesDisplayed: List<Inbox> = listOf()
         private set
 
@@ -39,11 +41,11 @@ class InboxViewModel @Inject constructor(
         fetchInbox(pageToLoad = pageToLoad, isLoadingMore = true)
     }
 
-    fun updateLastMessageTime() {
+    fun updateLastMessageTime(newTime: Long = System.currentTimeMillis()) {
         viewModelScope.launch {
             currentInboxesDisplayed = updateRandomInboxTimeUseCase(
                 inboxes = currentInboxesDisplayed,
-                newTime = System.currentTimeMillis()
+                newTime = newTime
             )
             emitNewState(
                 _state.value.copy(
@@ -82,7 +84,7 @@ class InboxViewModel @Inject constructor(
     }
 
     private fun fetchInbox(pageToLoad: Int, isLoadingMore: Boolean = false) {
-        viewModelScope.launch(coroutineDispatcherProvider.io) {
+        viewModelScope.launch {
             getInboxUseCase(pageToLoad, isLoadingMore)
                 .collect { inboxResult ->
                     when (inboxResult) {

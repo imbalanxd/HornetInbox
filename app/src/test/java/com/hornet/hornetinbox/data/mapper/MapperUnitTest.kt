@@ -13,7 +13,7 @@ class MapperUnitTest {
     )
     @Test
     fun `mapper should map from Member object to Inbox object correctly`() {
-        val mapper = MemberToChatMapper()
+        val mapper = MemberToInboxMapper()
         val inbox = mapper.map(mockMember)
         Assert.assertTrue(mockMember.id == inbox.userId)
         Assert.assertTrue(mockMember.name == inbox.userName)

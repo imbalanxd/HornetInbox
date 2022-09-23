@@ -3,7 +3,7 @@ package com.hornet.hornetinbox.domain.usecases
 import android.content.res.Resources.NotFoundException
 import com.google.gson.JsonParseException
 import com.hornet.hornetinbox.data.InboxResult
-import com.hornet.hornetinbox.data.mapper.MemberToChatMapper
+import com.hornet.hornetinbox.data.mapper.MemberToInboxMapper
 import com.hornet.hornetinbox.data.models.Inbox
 import com.hornet.hornetinbox.domain.repository.InboxRepository
 import kotlinx.coroutines.flow.Flow
@@ -13,7 +13,7 @@ import javax.inject.Inject
 
 class GetInboxUseCase @Inject constructor(
     private val repository: InboxRepository,
-    private val mapper: MemberToChatMapper
+    private val mapper: MemberToInboxMapper
 ) {
     suspend operator fun invoke(
         page: Int,
