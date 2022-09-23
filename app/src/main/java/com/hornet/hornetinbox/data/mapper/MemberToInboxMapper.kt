@@ -1,11 +1,11 @@
-package com.hornet.hornetinbox.mapper
+package com.hornet.hornetinbox.data.mapper
 
 import com.hornet.hornetinbox.Utils
-import com.hornet.hornetinbox.models.Inbox
-import com.hornet.hornetinbox.models.Member
+import com.hornet.hornetinbox.data.models.Inbox
+import com.hornet.hornetinbox.data.models.Member
 import javax.inject.Inject
 
-class MemberToChatMapper @Inject constructor() : Mapper<Member, Inbox> {
+class MemberToInboxMapper @Inject constructor() : Mapper<Member, Inbox> {
     override fun map(input: Member): Inbox {
         return Inbox(
             userId = input.id,

@@ -1,6 +1,6 @@
-package com.hornet.hornetinbox.mapper
+package com.hornet.hornetinbox.data.mapper
 
-import com.hornet.hornetinbox.models.Member
+import com.hornet.hornetinbox.data.models.Member
 import org.junit.Assert
 import org.junit.Test
 
@@ -13,7 +13,7 @@ class MapperUnitTest {
     )
     @Test
     fun `mapper should map from Member object to Inbox object correctly`() {
-        val mapper = MemberToChatMapper()
+        val mapper = MemberToInboxMapper()
         val inbox = mapper.map(mockMember)
         Assert.assertTrue(mockMember.id == inbox.userId)
         Assert.assertTrue(mockMember.name == inbox.userName)

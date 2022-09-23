@@ -1,4 +1,4 @@
-package com.hornet.hornetinbox.mapper
+package com.hornet.hornetinbox.data.mapper
 
 interface Mapper<I,O> {
     fun map(input: I): O

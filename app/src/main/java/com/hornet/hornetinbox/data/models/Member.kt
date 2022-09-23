@@ -1,4 +1,4 @@
-package com.hornet.hornetinbox.models
+package com.hornet.hornetinbox.data.models
 
 import com.google.gson.annotations.SerializedName
 

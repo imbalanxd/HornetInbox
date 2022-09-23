@@ -1,9 +1,9 @@
 @file:OptIn(ExperimentalFoundationApi::class)
 
-package com.hornet.hornetinbox.ui
+package com.hornet.hornetinbox.presentation.ui
 
 import androidx.compose.animation.AnimatedVisibility
-import androidx.compose.animation.core.LinearOutSlowInEasing
+import androidx.compose.animation.core.FastOutSlowInEasing
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
@@ -27,7 +27,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import com.hornet.hornetinbox.Utils
-import com.hornet.hornetinbox.models.Inbox
+import com.hornet.hornetinbox.data.models.Inbox
 
 val PROFILE_IMAGE_SIZE = 70.dp
 
@@ -36,11 +36,11 @@ fun InboxView(
     state: InboxViewState,
     handleNewInboxButtonClicked: () -> Unit,
     onLoadMoreClicked: () -> Unit) {
+
     when {
-        state.hasError -> ErrorView(errorMessage = state.errorMessage)
         state.isLoading -> LoadingView()
-        state.data.isEmpty() -> EmptyInboxState()
-        else -> InboxContentView(
+        state.hasError -> ErrorView(errorMessage = state.errorMessage ?: "It's not you, it's us :(")
+        state.data.isNotEmpty() -> InboxContentView(
             inboxList = state.data,
             canLoadMore = state.canLoadMore,
             hasLoadedMore = state.hasLoadedMore,
@@ -48,19 +48,19 @@ fun InboxView(
             handleNewInboxButtonClicked = handleNewInboxButtonClicked,
             onLoadMoreClicked = onLoadMoreClicked
         )
+        state.data.isEmpty() -> EmptyInboxState()
     }
 }
 
 @Composable
-fun ErrorView(errorMessage: String?) {
-    val text = errorMessage ?: "It's not you, it's us :("
+fun ErrorView(errorMessage: String) {
     Column(
         modifier = Modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Text(
-            text = text,
+            text = errorMessage,
             maxLines = 2,
             overflow = TextOverflow.Ellipsis,
             softWrap = true,
@@ -172,8 +172,8 @@ fun InboxListItems(inboxList: List<Inbox>, hasLoadedMore: Boolean, hasUpdatedCon
             Spacer(modifier = Modifier.height(4.dp))
             InboxCell(modifier = Modifier.animateItemPlacement(
                 animationSpec = tween(
-                    durationMillis = 700,
-                    easing = LinearOutSlowInEasing,
+                    durationMillis = 1200,
+                    easing = FastOutSlowInEasing,
                 )
             ), inbox = inbox)
             Spacer(modifier = Modifier.height(4.dp))

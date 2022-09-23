@@ -1,4 +1,4 @@
-package com.hornet.hornetinbox.ui.theme
+package com.hornet.hornetinbox.presentation.ui.theme
 
 import androidx.compose.material.Typography
 import androidx.compose.ui.text.TextStyle
