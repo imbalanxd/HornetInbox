@@ -3,9 +3,9 @@ package com.hornet.hornetinbox.viewModel
 import androidx.compose.ui.graphics.Color
 import com.hornet.hornetinbox.CoroutineDispatcherProvider
 import com.hornet.hornetinbox.data.repository.InboxRepositoryImpl
-import com.hornet.hornetinbox.models.Inbox
-import com.hornet.hornetinbox.ui.InboxViewModel
-import com.hornet.hornetinbox.ui.InboxViewState
+import com.hornet.hornetinbox.data.models.Inbox
+import com.hornet.hornetinbox.presentation.ui.InboxViewModel
+import com.hornet.hornetinbox.presentation.ui.InboxViewState
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.first

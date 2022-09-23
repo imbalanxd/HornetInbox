@@ -1,6 +1,6 @@
-package com.hornet.hornetinbox.mapper
+package com.hornet.hornetinbox.data.mapper
 
-import com.hornet.hornetinbox.models.Member
+import com.hornet.hornetinbox.data.models.Member
 import org.junit.Assert
 import org.junit.Test
 

@@ -1,7 +1,7 @@
 package com.hornet.hornetinbox.data
 
 import com.hornet.hornetinbox.data.repository.InboxRepositoryImpl
-import com.hornet.hornetinbox.mapper.MemberToChatMapper
+import com.hornet.hornetinbox.data.mapper.MemberToChatMapper
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.runTest
 import org.junit.Assert
@@ -16,7 +16,7 @@ class InboxRepositoryUnitTest {
 
     @Test
     fun `repository should fetch data correctly`() {
-        val mockDataFetcher: DataFetcher = mock()
+        val mockDataFetcher: DataFetcherImpl = mock()
         val repository = InboxRepositoryImpl(mockDataFetcher, MemberToChatMapper())
         runTest {
             whenever(repository.getInbox(100)).thenReturn(emptyList())
